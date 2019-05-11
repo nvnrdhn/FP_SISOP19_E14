@@ -96,7 +96,7 @@ int main(void *arg) {
 
     fclose(config);
     // fclose(log);
-    sleep(5);
+    sleep(60);
   }
   
   exit(EXIT_SUCCESS);
