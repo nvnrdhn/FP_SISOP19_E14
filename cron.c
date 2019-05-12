@@ -88,7 +88,7 @@ int main(void *arg) {
     char s[500] = "";
     int i = 0;
     while (fscanf(config, "%s %s %s %s %s %s", cmi, ch, cdm, cmo, cdw, s) != EOF) {
-      if ((!strcmp(smi, cmi) || !strcmp(cmi, "*")) && (!strcmp(sh, sh) || !strcmp(ch, "*")) && (!strcmp(sdm, cdm) || !strcmp(cdm, "*")) && (!strcmp(smo, cmo) || !strcmp(cmo, "*")) && (!strcmp(sdw, cdw) || !strcmp(cdw, "*"))) {
+      if ((!strcmp(smi, cmi) || !strcmp(cmi, "*")) && (!strcmp(sh, ch) || !strcmp(ch, "*")) && (!strcmp(sdm, cdm) || !strcmp(cdm, "*")) && (!strcmp(smo, cmo) || !strcmp(cmo, "*")) && (!strcmp(sdw, cdw) || !strcmp(cdw, "*"))) {
         // fprintf(log, "%s%s %s %s %s %s %s\n\n", asctime(&tm), cmi, ch, cdm, cmo, cdw, s);
         pthread_create( &tid[i++], NULL, run_command, (void*) s);
       }
