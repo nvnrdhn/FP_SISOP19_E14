@@ -15,6 +15,7 @@
 
 pthread_t tid[MAX];  
 
+//thread untuk menjalankan exec bash
 void* run_command(void *arg)
 {
   char *dir;
@@ -87,6 +88,7 @@ int main(void *arg) {
     char cmi[3], ch[3], cdm[3], cmo[3], cdw[2];
     char s[500] = "";
     int i = 0;
+    //membandingkan waktu saat ini dengan waktu di crontab.data
     while (fscanf(config, "%s %s %s %s %s %s", cmi, ch, cdm, cmo, cdw, s) != EOF) {
       if ((!strcmp(smi, cmi) || !strcmp(cmi, "*")) && (!strcmp(sh, ch) || !strcmp(ch, "*")) && (!strcmp(sdm, cdm) || !strcmp(cdm, "*")) && (!strcmp(smo, cmo) || !strcmp(cmo, "*")) && (!strcmp(sdw, cdw) || !strcmp(cdw, "*"))) {
         // fprintf(log, "%s%s %s %s %s %s %s\n\n", asctime(&tm), cmi, ch, cdm, cmo, cdw, s);
